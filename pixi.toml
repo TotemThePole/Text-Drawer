@@ -1,0 +1,19 @@
+[workspace]
+name = "robostack"
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["osx-64"]
+
+[target.unix.activation]
+scripts = ["install/setup.bash"]
+
+[dependencies]
+python = "*"
+
+[feature.humble]
+channels = ["https://prefix.dev/robostack-humble"]
+
+[feature.humble.dependencies]
+ros-humble-desktop = "*"
+
+[environments]
+humble = { features = ["humble"] }
